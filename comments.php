@@ -1,6 +1,5 @@
-<!-- <?php
+ <?php
 
-include "conn.php";
 include "connection.php";
 session_start();
 
@@ -8,8 +7,7 @@ session_start();
 
 if(isset($_POST['submit'])){ 
 
-    $comment = $_POST('comment');
+   $query = " INSERT INTO `comments`( `comment`, `email`, `username`)    VALUES('$comment', '$email', '$username')";
+mysqli_query($db, $query);
+} 
 
-    $email = $_POST('email'); 
-    $id = $_POST('user_id');
-} -->

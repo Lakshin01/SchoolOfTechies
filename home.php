@@ -147,13 +147,21 @@ if (!isset($_SESSION['username'])) {
              <?php echo $_SESSION['email']; 
        $sql = "SELECT * FROM comments";
         $res = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_assoc($res);
-echo $row;
+        
+        $row = mysqli_fetch_array($res);
+                                        
+        echo $row[1];
+        $row = mysqli_fetch_array($res);
+                                        
+        echo $row[1];
+
              ?>
-             <form method="POST">
+             <form method="POST" action="comments.php">
               Comment:  <input type="text">
               <input type="submit">
              </form>
+
+             
 
 <!-- 
                 <div class="col-lg-6 col-md-12 col-sm-12 services">
